@@ -1,0 +1,24 @@
+To configure a private repo, you first need to generate a public/private RSA key pair on your dev machine to be able to establish an ssh connection to your repo instead of an HTTP connection.
+
+Just install Git for Windows in your development environment. During installation, please make sure that you have checked the option to include git bash, as you'll need it to create this key. 
+Once installed, right click on your Windows user folder, select on Open git bash and then just run ssh-keygen (or if you are using Linux, you can just ssh-keygen) and go through the wizard.
+
+This step will create a hidden .ssh folder that contains your public/private RSA key pair. Navigate to that folder.
+
+The goal here with these keys is to configure your public key on GitHub. Open your id_rsa.pub file with notepad and copy its entire content. 
+hen go to GitHub and under your user Settings > SSH keys just add a key and paste your entire public key plus an arbitrary name.
+
+Now restart VS Code and press CTRL+ ' (Backtick) to open PowerShell and then run:
+
+In case you haven't cloned your repo:
+
+git clone git@github.com:{UserName}/{RepoName}.git
+To Upload changes to your repo:
+
+git add .
+git commit -m "{Name for this commit}"
+git push {Repo Origin name (default = Origin)} {Branch Name (Default = Master)}
+Note. {} are for reference, do not include them in your commands.
+
+VS Code has built-in support for Source Control, so if it is configured, VS Code will automatically detect changes and get them ready to commit with just a commit message and click. 
+Also, there's a really good VS Core extension called GitLens. This can help you to 1-click push
