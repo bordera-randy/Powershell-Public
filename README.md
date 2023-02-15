@@ -1,3 +1,4 @@
 # Welcome to the Rabbit Hole!
 
-Please use responsibly
+Please code responsibly
+
