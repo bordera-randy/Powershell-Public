@@ -1,0 +1,1 @@
+get-aduser -filter * -properties * | select CN, Enabled, @{Name = 'LastLogon'; Expression={[datetime]::FromFileTime($_.LastLogon)} }, @{Name = 'lastLogonTimestamp'; Expression={[datetime]::FromFileTime($_.lastLogonTimeStamp)} }, whenchanged, mail, AccountlockoutTime, AccountExpirationDate, AccountExpires | export-csv .\Desktop\usersout.csv

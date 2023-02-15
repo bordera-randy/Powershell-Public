@@ -1,0 +1,2 @@
+certutil -split iis7rcsr
+certutil -encode blob0_1.p10 finalcsr.csr

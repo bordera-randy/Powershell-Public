@@ -1,0 +1,6 @@
+Robocopy 
+
+robocopy e:\ f:\fileshares  /e /zb /copyall /log:c:\temp\robocopy_log.txt /tee 
+
+attrib -r -S F:\foldername /S /D
+

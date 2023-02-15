@@ -1,0 +1,1 @@
+Add-DnsServerPrimaryZone -DynamicUpdate Secure -NetworkId '10.231.84.0/23' -ReplicationScope forest

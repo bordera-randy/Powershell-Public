@@ -1,0 +1,1 @@
+Get-MailboxDatabase -Status | sort name | select name,@{Name='DB Size (Mb)';Expression={$_.DatabaseSize.ToMb()}},@{Name='Available New Mbx Space Mb)';Expression={$_.AvailableNewMailboxSpace.ToMb()}}

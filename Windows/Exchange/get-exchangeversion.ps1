@@ -1,0 +1,1 @@
+Get-Command ExSetup | ForEach {$_.FileVersionInfo} 

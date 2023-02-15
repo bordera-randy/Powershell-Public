@@ -1,0 +1,1 @@
+Get-Mailbox -ResultSize Unlimited |Select-Object DisplayName,PrimarySmtpAddress, @{Name=*EmailAddresses*;Expression={$_.EmailAddresses |Where-Object {$_.PrefixString -ceq *smtp*} | ForEach-Object {$_.SmtpAddress}}} | Sort-Object name, primarysmtp | export-csv c:\support\mailbox.csv

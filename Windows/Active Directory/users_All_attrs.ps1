@@ -1,0 +1,1 @@
+get-content c:\users.txt | get-aduser -pr * | Export-Csv users_All_attrs.csv

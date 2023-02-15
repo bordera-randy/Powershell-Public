@@ -1,0 +1,140 @@
+AccountExpirationDate                :
+accountExpires                       : 9223372036854775807
+AccountLockoutTime                   :
+AccountNotDelegated                  : False
+AllowReversiblePasswordEncryption    : False
+AuthenticationPolicy                 : {}
+AuthenticationPolicySilo             : {}
+BadLogonCount                        : 0
+badPasswordTime                      : 131167825686342688
+badPwdCount                          : 0
+co                                   : IN
+CannotChangePassword                 : False
+CanonicalName                        : triconenergy.com/TriconEnergy/Users/EMEA/Mumbai - India/Users/Niranjan Puthran
+Certificates                         : {}
+City                                 : Mumbai
+CN                                   : Niranjan Puthran
+co                                   : India
+codePage                             : 0
+Company                              : Tricon Energy India Pvt. Ltd.
+CompoundIdentitySupported            : {}
+Country                              : IN
+countryCode                          : 356
+Created                              : 8/4/2014 2:28:21 AM
+createTimeStamp                      : 8/4/2014 2:28:21 AM
+Deleted                              :
+Department                           : JDE
+Description                          : JDE Developer
+DisplayName                          : Niranjan Puthran
+DistinguishedName                    : CN=Niranjan Puthran,OU=Users,OU=Mumbai - India,OU=EMEA,OU=Users,OU=TriconEnergy,DC=triconenergy,DC=com
+Division                             :
+DoesNotRequirePreAuth                : False
+dSCorePropagationData                : {8/23/2016 8:48:32 AM, 8/1/2016 7:34:48 PM, 7/6/2016 11:51:46 AM, 7/6/2016 10:34:41 AM...}
+EmailAddress                         : puthrann@triconenergy.com
+EmployeeID                           :
+EmployeeNumber                       :
+Enabled                              : True
+facsimileTelephoneNumber             : +91-2240963199
+Fax                                  : +91-2240963199
+GivenName                            : Niranjan
+HomeDirectory                        :
+HomedirRequired                      : False
+HomeDrive                            :
+homeMDB                              : CN=MB04,CN=Databases,CN=Exchange Administrative Group(FYDIBOHF23SPDLT),CN=Administrative                   Groups,CN=TriconEnergy,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=triconenergy,DC=com
+HomePage                             :
+HomePhone                            : +91 2240963100
+Initials                             :
+instanceType                         : 4
+isDeleted                            :
+KerberosEncryptionType               : {}
+l                                    : Mumbai
+LastBadPasswordAttempt               : 8/27/2016 9:42:48 AM
+LastKnownParent                      :
+lastLogoff                           : 0
+lastLogon                            : 131171381632469530
+LastLogonDate                        : 8/24/2016 9:33:39 AM
+lastLogonTimestamp                   : 131165228193209812
+legacyExchangeDN                     : /o=TriconEnergy/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=Niranjan Puthran4f3
+LockedOut                            : False
+logonCount                           : 3197
+LogonWorkstations                    :
+mail                                 : puthrann@triconenergy.com
+mailNickname                         : puthrann
+managedObjects                       : {CN=TRI-IND-W7L05,OU=Computers,OU=Mumbai - India,OU=EMEA,OU=Users,OU=TriconEnergy,DC=triconenergy,DC=com}
+Manager                              : CN=Mike Dupaix,OU=Users,OU=Houston\, TX - United States,OU=Americas,OU=Users,OU=TriconEnergy,DC=triconenergy,DC=com
+mDBUseDefaults                       : True
+MemberOf                             : {CN=Office 365 Enterprise E3Users,OU=Office 365,OU=Tricon Security Groups,OU=TriconEnergy,DC=triconenergy,DC=com, CN=JDESupport,OU=Tricon Dist Groups,OU=TriconEnergy,DC=triconenergy,DC=com, CN=triconindia,OU=Tricon Dist Groups,OU=TriconEnergy,DC=triconenergy,DC=com,CN=employees,OU=Tricon Security Groups,OU=TriconEnergy,DC=triconenergy,DC=com...}
+MNSLogonAccount                      : False
+mobile                               : +917506782346
+MobilePhone                          : +917506782346
+Modified                             : 8/24/2016 9:33:39 AM
+modifyTimeStamp                      : 8/24/2016 9:33:39 AM
+msDS-User-Account-Control-Computed   : 0
+msExchELCMailboxFlags                : 2
+msExchHomeServerName                 : /o=TriconEnergy/ou=ExchangeAdministrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=TRI-COLO-EX01
+msExchMailboxGuid                    : {219, 149, 78, 74...}
+msExchMailboxSecurityDescriptor      : System.DirectoryServices.ActiveDirectorySecurity
+msExchMailboxTemplateLink            : CN=5 Year Email Retention,CN=RetentionPoliciesContainer,CN=TriconEnergy,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=triconenergy,DC=com
+msExchMobileMailboxPolicyLink        : CN=Default,CN=Mobile MailboxPolicies,CN=TriconEnergy,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=triconenergy,DC=com
+msExchPoliciesIncluded               : {9ce52a57-3229-4767-922c-dadbd822c7ea,{26491cfc-9e50-4857-861b-0cb8df22b5d7}}
+msExchRBACPolicyLink                 : CN=Default Role Assignment Policy,CN=Policies,CN=RBAC,CN=TriconEnergy,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=triconenergy,DC=com
+msExchRecipientDisplayType           : 1073741824
+msExchRecipientTypeDetails           : 1
+msExchSafeSendersHash                : {170, 40, 141, 231}
+msExchTextMessagingState             : {302120705, 16842751}
+msExchUMDtmfMap                      : {reversedPhone:001369042219+,reversedPhone:643287605719+,reversedPhone:991369042219+,emailAddress:78847266...}
+msExchUserAccountControl             : 0
+msExchUserCulture                    : en-IN
+msExchVersion                        : 88218628259840
+msExchWhenMailboxCreated             : 8/4/2014 3:03:14 AM
+Name                                 : Niranjan Puthran
+nTSecurityDescriptor                 : System.DirectoryServices.ActiveDirectorySecurity
+ObjectCategory                       : CN=Person,CN=Schema,CN=Configuration,DC=triconenergy,DC=com
+ObjectClass                          : user
+ObjectGUID                           : f4bb082a-defd-4505-9c48-2b563cfab2f6
+objectSid                            : S-1-5-21-650459484-1058088285-988572150-15291
+Office                               : Mumbai
+OfficePhone                          : +91 2240963100
+Organization                         :
+OtherName                            :
+PasswordExpired                      : False
+PasswordLastSet                      : 7/4/2016 11:12:39 PM
+PasswordNeverExpires                 : False
+PasswordNotRequired                  : False
+physicalDeliveryOfficeName           : Mumbai
+POBox                                :
+PostalCode                           : 400064
+PrimaryGroup                         : CN=DomainUsers,CN=Users,DC=triconenergy,DC=com
+primaryGroupID                       : 513
+PrincipalsAllowedToDelegateToAccount : {}
+ProfilePath                          :
+ProtectedFromAccidentalDeletion      : False
+proxyAddresses                       : {x500:/o=ExchangeLabs/ou=ExchangeAdministrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=4427c1abf60d46cf93dd467447cb9679-Niranjan Pu,smtp:puthrann@trichemgroup.com,X400:C=US;A= ;P=TriconEnergy;O=Exchange;S=Puthran;G=Niranjan;,SMTP:puthrann@triconenergy.com}
+pwdLastSet                           : 131121655596292581
+SamAccountName                       : puthrann
+sAMAccountType                       : 805306368
+ScriptPath                           :
+sDRightsEffective                    : 15
+ServicePrincipalNames                : {}
+showInAddressBook                    : {CN=All Users,CN=All AddressLists,CN=Address ListsContainer,CN=TriconEnergy,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=triconenergy,DC=com, CN=Default GlobalAddress List,CN=All Global AddressLists,CN=Address ListsContainer,CN=TriconEnergy,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=triconenergy,DC=com}
+SID                                  : S-1-5-21-650459484-1058088285-988572150-15291
+SIDHistory                           : {}
+SmartcardLogonRequired               : False
+sn                                   : Puthran
+st                                   : Maharashtra
+State                                : Maharashtra
+StreetAddress                        : Knox Plaza, A Wing, 3rd Floor, BehindInorbit Mall, Link Road, Malad (W)
+Surname                              : Puthran
+telephoneNumber                      : +91 2240963100
+textEncodedORAddress                 : X400:C=US;A= ;P=TriconEnergy;O=Exchange;S=Puthran;G=Niranjan;
+Title                                : JDE Developer
+TrustedForDelegation                 : False
+TrustedToAuthForDelegation           : False
+UseDESKeyOnly                        : False
+userAccountControl                   : 512
+userCertificate                      : {}
+UserPrincipalName                    : puthrann@triconenergy.com
+uSNChanged                           : 68251797
+uSNCreated                           : 29730
+whenChanged                          : 8/24/2016 9:33:39 AM
+whenCreated                          : 8/4/2014 2:28:21 AM

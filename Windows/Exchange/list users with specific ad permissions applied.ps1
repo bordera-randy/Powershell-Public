@@ -1,0 +1,1 @@
+Get-Mailbox -ResultSize Unlimited | Get-MailboxPermission -User <Active Directory User> | Format-Table Identity, AccessRights, Deny

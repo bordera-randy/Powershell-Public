@@ -1,0 +1,2 @@
+Get-CASMailbox -ResultSize Unlimited | where { $_.ActiveSyncEnabled -eq 'True'} | ft name, activesyncenabled -autosize > $env:userprofile\Desktop\activesync_owa_Report.txt
+Get-CASMailbox -ResultSize Unlimited | where { $_.OWAEnabled -eq 'True'} | ft name, owaenabled -autosize >> $env:userprofile\Desktop\owa_Report.txt

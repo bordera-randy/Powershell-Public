@@ -1,0 +1,1 @@
+Get-ADGroup -Filter * -Properties Members | where {-not $_.members} | select Name | Export-Csv D:\emprtygroups.csv –NoTypeInformation

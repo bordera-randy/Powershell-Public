@@ -1,0 +1,17 @@
+#List all mailboxes to which a particular user has Full Access permissions:
+Get-Mailbox | Get-MailboxPermission -User vasil
+
+#List all shared/user/room/whatever mailboxes to which particular user has Full Access permissions:
+Get-Mailbox -RecipientTypeDetails UserMailbox,SharedMailbox -ResultSize Unlimited | Get-MailboxPermission -User vasil
+
+#List all mailboxes to which members of a particular security group have access:
+Get-Mailbox | Get-MailboxPermission -User secgrp
+
+#List all mailboxes to which a user has Send As permissions:
+Get-Mailbox | Get-RecipientPermission -Trustee vasil
+
+#List all user mailboxes to which members of a particular security group have Send As access:
+Get-Mailbox -RecipientTypeDetails UserMailbox -ResultSize Unlimited | Get-RecipientPermission -Trustee secgrp
+
+#List all mailboxes to which a particular security principal has Send on behalf of permissions:
+Get-Mailbox | ? {$_.GrantSendOnBehalfTo -match "vasil"}

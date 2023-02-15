@@ -1,0 +1,3 @@
+Search-Mailbox -identity sa.managediron -EstimateResultOnly -IncludeUnsearchableItems -SearchQuery "from:synserv" | Add-Member -MemberType ScriptProperty -Name testsize -Value {$this.ResultItemsSize.replace(“(.*\()|,| [a-z]*\)”, “”)} | select-object displayname, resultitemscount, testsize | export-csv -path "c:\users\sa.managediron\desktop\output.csv"
+
+get-mailbox -resultsize unlimited | Search-Mailbox -EstimateResultOnly -IncludeUnsearchableItems -SearchQuery "from:synserv@thebankofsa.com" | select displayname, resultitemscount, @{Name = "resultItemsize"; Expression = {$_.ResultItemsSize -replace "(.*\()|,| [a-z]*\)", ""} } | export-csv -path $env:userprofile\desktop\output.csv

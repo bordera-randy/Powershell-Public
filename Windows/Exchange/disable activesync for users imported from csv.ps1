@@ -1,0 +1,2 @@
+$fileName = Read-Host 'What is the file name with the list of users which will have ActiveSync disabled? (if not in local path specify full path and file name)'
+Import-Csv $filename | foreach {Set-CASMailbox -Identity $_.UserID -ActiveSyncEnabled $false}

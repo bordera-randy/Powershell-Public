@@ -1,0 +1,24 @@
+https://kubernetes.io/docs/concepts/workloads/pods/#how-pods-manage-multiple-containers
+
+https://www.alex-hidalgo.com/the-slo-book
+
+https://docs.microsoft.com/en-us/azure/architecture/example-scenario/apps/scalable-apps-performance-modeling-site-reliability
+
+Here are some resources for those not doing the labs from MS learn:
+https://docs.microsoft.com/en-us/learn/paths/intro-to-kubernetes-on-azure/
+https://docs.microsoft.com/en-us/learn/paths/develop-deploy-applications-kubernetes/
+https://docs.microsoft.com/en-us/learn/paths/create-microservices-with-dotnet/
+https://docs.microsoft.com/en-us/learn/paths/administer-containers-in-azure/
+
+
+asalbers (github.com)
+https://github.com/asalbers
+
+https://minikube.sigs.k8s.io/docs/
+
+https://docs.microsoft.com/en-us/visualstudio/bridge/
+
+https://docs.microsoft.com/en-us/dotnet/architecture/grpc-for-wcf-developers/grpc-in-production
+
+https://netflix.github.io/
+

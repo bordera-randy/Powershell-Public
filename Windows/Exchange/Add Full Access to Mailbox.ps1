@@ -1,0 +1,1 @@
+Add-MailboxPermission -Identity "tm sales" -User sa.managediron -AccessRights FullAccess -InheritanceType All

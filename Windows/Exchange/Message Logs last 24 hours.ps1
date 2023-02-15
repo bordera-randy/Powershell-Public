@@ -1,0 +1,1 @@
+get-messagetrackinglog -sender "americanbanker@email.americanbanker.com" -messagesubject "Daily Briefing" -resultsize 1000 -Start (Get-Date).AddHours(-24) | format-table -autosize 

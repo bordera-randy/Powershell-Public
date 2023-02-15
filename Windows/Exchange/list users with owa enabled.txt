@@ -1,0 +1,1 @@
+Get-CASMailbox -ResultSize Unlimited | where { $_.OWAEnabled -eq 'True'} | ft name, owaenabled -autosize > $env:userprofile\Desktop\OWAEnabled.txt

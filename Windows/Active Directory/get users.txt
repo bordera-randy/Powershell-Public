@@ -1,0 +1,14 @@
+csvde -d "dc=lynd,dc=local"   -f c:lynd.csv
+Csvde -r "(ObjectClass=user)" -f c:\lyndusers.csv
+csvde -r "(ObjectClass=user)" -l cn,mail -f c:\lyndusers.csv
+
+csvde -r "(objectClass=user)" -d "ou=Staging,ou=Disabled Users,ou=triconenergy,DC=triconenergy,DC=com" -f c:\temp\stagingUsers.csv
+
+
+•	The -f switch specifies the filename. For example: -f c:'test.csv or -f c:'test.ldf.
+•	The -s switch specifies the server to connect to. For example: -s WIN2008-dc1.
+•	The –t switch specifies the LDAP port to use. For example: -t 10389.
+•	The -d switch allows you to focus the export on one particular object or OU.  For example, exporting just the "Dev" OU and not the entire Active Directory domain: -d "ou=dev,dc=petrilab,dc=local", or exporting the user "James" in the "Dev" OU: -d "cn=james,ou=dev,dc=petrilab,dc=local".
+•	The -r switch allows you to filter based upon object class of any other LDAP-type filter. For example: -r "(objectClass=user)".
+Also see the "LDAP Search Samples for Windows Server 2003 and Exchange 2000/2003" article for some examples.
+•	The -l switch (lower case "L") specifies the attributes to export. For example: -l telephonenumber.

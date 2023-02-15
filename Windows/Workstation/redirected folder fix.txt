@@ -1,0 +1,15 @@
+REM run as batch file 
+
+set /p strDomain=What is the FQDN for this domain (i.e. domain.local)?:
+
+for /D %%I in (*) DO iCACLS.exe "%%I" /T /grant "%strDomain%\%%I":M "%strDomain%\Domain Admins":F
+'pause
+
+for /D %%I in (*) DO iCACLS.exe "%%I" /T /grant "%strDomain%\%%I":(OI)(CI)F
+
+for /D %%I in (*) DO iCACLS.exe "%%I" /setowner "%strDomain%\%%I" /T
+
+
+REM set owner creator permissions on parent folder to subfolder and files only full access 
+REM set domain user this folder only - traverse permissions 
+REM run script from cmd line from the directory of the parent folder 

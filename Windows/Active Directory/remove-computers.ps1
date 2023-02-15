@@ -1,0 +1,1 @@
+Get-Content -Path C:\ComputerList.txt | Remove-ADComputer -WhatIf

@@ -1,0 +1,130 @@
+##############################################################################
+# Get-Exchange-Log-Offenders 
+# Requires Exchange Module/Tools for Exchange 2010.  Discovers and checks all 
+# Databases servers for top 5 (defineable) log generating users.  Can be 
+# scoped to specific databases. Output can be defined as CSV, HTML or if not 
+# defined, will output to console. ~1 Hour sampling static.
+#
+#
+# Created 4/15/2014
+#
+##############################################################################
+
+[CmdletBinding()]
+    Param(
+      [string[]]$Databases= (Get-MailboxDatabase | select -ExpandProperty name | Sort),
+        [int]$Top=20,
+        [switch]$CSV,
+        [switch]$HTML,
+        [string]$Outpath="c:\"
+
+        )
+
+#### Functions called in Get-Exchange-Log-Offenders.ps1
+
+#This function borrowed from Exchange 2010 Scripts\StoreTSLibrary.ps1
+# Returns a descending list of the users generating the most log bytes for a given database
+# based on the output of Get-StoreUsageStatistics the list contains the MailboxGuid and the
+# number of bytes generated during the captured sampling periods (~ 1 hour)
+
+function Get-TopLogGenerators([string] $DatabaseIdentity)
+{
+    # The Filter parameter doesn't accept complex filters, so filter on the category
+    # and then use a where clause to filter out the Quarantined mailboxes.
+    $stats = Get-StoreUsageStatistics -Database $DatabaseIdentity `
+                    -Filter "DigestCategory -eq 'LogBytes'" `
+                    | where {$_.IsQuarantined -eq $false} `
+                    | group MailboxGuid
+
+    $topGenerators = New-Object Collections.ArrayList
+
+    if ($null -ne $stats)
+    {
+        foreach($mailboxStats in $stats)
+        {
+            $total = 0
+            $statSummary = new-object PSObject
+
+            foreach($stat in $mailboxStats.Group)
+            {
+                $total += $stat.LogRecordBytes
+            }
+
+            Add-Member -in $statSummary -Name TotalLogBytes -MemberType NoteProperty -Value $total
+            Add-Member -in $statSummary -Name MailboxGuid -MemberType NoteProperty -Value $mailboxStats.Group[0].MailboxGuid
+
+            # Tell PS we don't care about the return value for this function
+            # otherwise these values will be output to the pipeline!
+            [void]$topGenerators.Add($statSummary)
+        }
+        $topGenerators = Sort-Object -InputObject $topGenerators -Property TotalLogBytes -Descending
+    }
+
+    return $topGenerators
+}
+
+#### End Functions section
+
+
+#### Get-Exchange-Log-Offenders Script ####
+$i=1
+$n=1
+$outfile=@()
+$now = Get-Date -Format G
+$timestamp = Get-Date -Format o | foreach {$_ -replace ":", "."}
+$offenders =@()
+
+$Count =  ($databases.length)
+""
+"Leveraging ~\Ex2k10NativeScripts\StoreTSLibrary.ps1: [Get-StoreUsageStatistics] to calculate bytes generated during the captured sampling period of 1 hour."
+""
+"Checking $count databases for top $top log generating users per database!"
+""
+
+foreach ($DB in $Databases){
+ Write-Progress -Activity "Checking database $db" -Status "Mailbox $n of $count" -PercentComplete (($n / $count) * 100)
+           
+    $offenders += Get-TopLogGenerators -DatabaseIdentity $db | sort TotalLogBytes -descending | select -first $Top | `
+    select @{n="Log Size (MB)/Min";e={[math]::Round(($_.TotalLogBytes /1MB),2)}}, `
+    @{n="Database";e={$db}}, `
+    @{n="User";e={(get-mailbox $_.mailboxguid.tostring())}}
+$i++
+$n++
+}
+
+if (!($csv -or $HTML)){
+    ""
+    Get-Date
+    $offenders | Sort-Object -Property "Log Size (MB)/Min" -descending ##| Format-Table -AutoSize
+}
+
+if ($csv){
+$offenders | Sort-Object -Property "Log Size (MB)/Min" -descending | export-csv "$Outpath\Log-Offenders_$timestamp.csv"
+Invoke-Item "$Outpath\Log-Offenders_$timestamp.csv"
+}
+
+if ($HTML){
+        #### HTML Report ####
+        $htmlhead="<html>
+         <style>
+         BODY{font-family: Arial; font-size: 8pt;}
+         H1{font-size: 16px;}
+         H2{font-size: 14px;}
+         H3{font-size: 12px;}
+         TABLE{border: 1px solid black; border-collapse: collapse; font-size: 8pt;}
+         TH{border: 1px solid black; background: #dddddd; padding: 5px; color: #000000;}
+         TD{border: 1px solid black; padding: 5px; }
+         </style>
+         <body>
+            <H1>Exchange Log Offenders Report as of: $now</H1>"
+
+
+        $htmltail="</body></html>"
+            
+     
+        $outfile = $offenders |Sort-Object -Property "Log Size (MB)/Min" -descending |  Select * | ConvertTo-Html -Fragment
+    
+        $htmlhead + $outfile + $htmltail | Out-File $outpath\Log-Offenders_$timestamp.HTM
+    
+        Invoke-Item $outpath\Log-Offenders_$timestamp.HTM
+    }

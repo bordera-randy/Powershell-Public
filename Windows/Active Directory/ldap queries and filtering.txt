@@ -1,0 +1,6 @@
+http://www.selfadsi.org/ads-attributes/user-userAccountControl.htm
+https://blogs.msdn.microsoft.com/muaddib/2008/10/08/how-to-query-individual-properties-of-the-useraccountcontrol-active-directory-user-property-using-ldap/
+https://support.microsoft.com/en-us/kb/269181
+https://support.microsoft.com/en-us/kb/305144
+http://jackstromberg.com/2013/01/useraccountcontrol-attributeflag-values/
+https://technet.microsoft.com/en-us/library/hh531527%28v=ws.10%29.aspx?f=255&MSPPError=-2147217396

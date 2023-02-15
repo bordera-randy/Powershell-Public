@@ -1,0 +1,1 @@
+PowerShell -Command "& {set-executionpolicy unrestricted -force}"

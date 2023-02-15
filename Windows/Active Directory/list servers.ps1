@@ -1,0 +1,1 @@
+$Computers = Get-ADComputer -Filter "OperatingSystem -like '*Server*'" | ForEach-Object {$_.Name}

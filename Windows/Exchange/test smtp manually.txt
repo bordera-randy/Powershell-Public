@@ -1,0 +1,46 @@
+﻿Test the SMTP Service
+
+
+Telnet
+set LocalEcho
+open <machinename> 25
+
+
+#220 computername.microsoft.com ESMTP Server (Microsoft Exchange Internet Mail Service 5.5.2651.58) ready
+
+helo me
+
+#The output resembles the following:
+#250 OK
+
+mail from:email@domain.com
+
+#The output resembles the following:
+#250 OK - mail from <email@domain.com>
+
+rcpt to:youremail@yourdomain.com
+
+#The output resembles the following:
+#250 OK - Recipient <youremail@yourdomain.com>
+
+Data
+
+#The output resembles the following:
+#354 Send data.  End with CRLF.CRLF
+
+Subject:This is a test
+#press ENTER two times.
+
+Testing
+
+#Press ENTER, type a period (.), and then press ENTER.
+
+#The output resembles the following:
+#250 OK
+
+quit
+
+#The output resembles the following:
+#221 Closing Port / Mail queued for delivery
+
+ 3.225.

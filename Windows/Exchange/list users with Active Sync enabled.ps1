@@ -1,0 +1,1 @@
+Get-CASMailbox -ResultSize Unlimited | where { $_.ActiveSyncEnabled -eq 'True'} | ft name, activesyncenabled –autosize 
