@@ -1,33 +1,37 @@
 
-0. Impersonate a user and group  
+0. ## Impersonate a user and group  
      kubectl get pods --as-group="somecompany:somecompany-teamname" --as="test"  
 
-1. Explain a resource  
-     ❯ kubectl explain hpa  
+1. ## Explain a resource  
+     ` kubectl explain hpa  `  
      KIND:     HorizontalPodAutoscaler  
      VERSION:  autoscaling/v1  
      DESCRIPTION:  
           configuration of a horizontal pod autoscaler.  
      FIELDS:  
-     apiVersion   <string>  
+     ### apiVersion   <string>  
           APIVersion defines the versioned schema of this representation of an  
           object. Servers should convert recognized schemas to the latest internal  
-          value, and may reject unrecognized values. More info:  
+          value, and may reject unrecognized values.  
+     More info:  
           https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources  
-     kind <string>  
+     ### kind <string>  
           Kind is a string value representing the REST resource this object  
           represents. Servers may infer this from the endpoint the client submits  
-          requests to. Cannot be updated. In CamelCase. More info:  
+          requests to. Cannot be updated. In CamelCase.  
+     More info:  
           https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds  
-     metadata     <Object>  
+     ### metadata     <Object>  
           Standard object metadata. More info:  
           https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata  
-     spec <Object>  
+     ### spec <Object>  
           behaviour of autoscaler. More info:  
           https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status.  
-     status       <Object>  
+     ### status       <Object>  
           current information about the autoscaler.  
-     kubectl explain svc  
+     
+     `kubectl explain svc  `
+     
 2. Get nodes region and zone  
      ❯ kubectl get nodes --label-columns failure-domain.beta.kubernetes.io/region,failure-domain.beta.kubernetes.io/zone  
      NAME                                        STATUS   ROLES    AGE     VERSION               REGION      ZONE  
