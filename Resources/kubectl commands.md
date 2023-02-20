@@ -1,40 +1,40 @@
 
-0. Impersonate a user and group
-     kubectl get pods --as-group="somecompany:somecompany-teamname" --as="test"
+0. Impersonate a user and group  
+     kubectl get pods --as-group="somecompany:somecompany-teamname" --as="test"  
 
-1. Explain a resource
-     ❯ kubectl explain hpa
-     KIND:     HorizontalPodAutoscaler
-     VERSION:  autoscaling/v1
-     DESCRIPTION:
-          configuration of a horizontal pod autoscaler.
-     FIELDS:
-     apiVersion   <string>
-          APIVersion defines the versioned schema of this representation of an
-          object. Servers should convert recognized schemas to the latest internal
-          value, and may reject unrecognized values. More info:
-          https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
-     kind <string>
-          Kind is a string value representing the REST resource this object
-          represents. Servers may infer this from the endpoint the client submits
-          requests to. Cannot be updated. In CamelCase. More info:
-          https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
-     metadata     <Object>
-          Standard object metadata. More info:
-          https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-     spec <Object>
-          behaviour of autoscaler. More info:
-          https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status.
-     status       <Object>
-          current information about the autoscaler.
-     kubectl explain svc
-2. Get nodes region and zone
-     ❯ kubectl get nodes --label-columns failure-domain.beta.kubernetes.io/region,failure-domain.beta.kubernetes.io/zone
-     NAME                                        STATUS   ROLES    AGE     VERSION               REGION      ZONE
-     ip-11-0-109-70.eu-west-1.compute.internal   Ready    <none>   5d21h   v1.16.15-eks-ad4801   eu-west-1   eu-west-1b
-     ip-11-0-148-55.eu-west-1.compute.internal   Ready    <none>   5d21h   v1.16.15-eks-ad4801   eu-west-1   eu-west-1a
-     ip-11-0-186-88.eu-west-1.compute.internal   Ready    <none>   5d21h   v1.16.15-eks-ad4801   eu-west-1   eu-west-1c
-3. Get All Labels
+1. Explain a resource  
+     ❯ kubectl explain hpa  
+     KIND:     HorizontalPodAutoscaler  
+     VERSION:  autoscaling/v1  
+     DESCRIPTION:  
+          configuration of a horizontal pod autoscaler.  
+     FIELDS:  
+     apiVersion   <string>  
+          APIVersion defines the versioned schema of this representation of an  
+          object. Servers should convert recognized schemas to the latest internal  
+          value, and may reject unrecognized values. More info:  
+          https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources  
+     kind <string>  
+          Kind is a string value representing the REST resource this object  
+          represents. Servers may infer this from the endpoint the client submits  
+          requests to. Cannot be updated. In CamelCase. More info:  
+          https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds  
+     metadata     <Object>  
+          Standard object metadata. More info:  
+          https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata  
+     spec <Object>  
+          behaviour of autoscaler. More info:  
+          https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status.  
+     status       <Object>  
+          current information about the autoscaler.  
+     kubectl explain svc  
+2. Get nodes region and zone  
+     ❯ kubectl get nodes --label-columns failure-domain.beta.kubernetes.io/region,failure-domain.beta.kubernetes.io/zone  
+     NAME                                        STATUS   ROLES    AGE     VERSION               REGION      ZONE  
+     ip-11-0-109-70.eu-west-1.compute.internal   Ready    <none>   5d21h   v1.16.15-eks-ad4801   eu-west-1   eu-west-1b  
+     ip-11-0-148-55.eu-west-1.compute.internal   Ready    <none>   5d21h   v1.16.15-eks-ad4801   eu-west-1   eu-west-1a  
+     ip-11-0-186-88.eu-west-1.compute.internal   Ready    <none>   5d21h   v1.16.15-eks-ad4801   eu-west-1   eu-west-1c  
+3. Get All Labels  
      ❯ kubectl get nodes --show-labels
      NAME                                        STATUS   ROLES    AGE     VERSION               LABELS
      ip-11-0-109-70.eu-west-1.compute.internal   Ready    <none>   5d21h   v1.16.15-eks-ad4801   alpha.eksctl.io/cluster-name=dev-cluster-1,alpha.eksctl.io/instance-id=i-04c61a8ef573ef91b,alpha.eksctl.io/nodegroup-name=dev-cluster-1001-stateless,beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=m5.large,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=eu-west-1,failure-domain.beta.kubernetes.io/zone=eu-west-1b,kubernetes.io/arch=amd64,kubernetes.io/hostname=ip-11-0-109-70.eu-west-1.compute.internal,kubernetes.io/os=linux,node-lifecycle=on-demand
