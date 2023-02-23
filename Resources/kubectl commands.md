@@ -24,7 +24,7 @@
      ### status       <Object>  
           current information about the autoscaler.  
      
-     `kubectl explain svc  `
+     `kubectl explain svc`  
      
 2. ## Get nodes region and zone  
      ` kubectl get nodes --label-columns failure-domain.beta.kubernetes.io/region,failure-domain.beta.kubernetes.io/zone  `  
