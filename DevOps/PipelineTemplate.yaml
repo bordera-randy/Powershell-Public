@@ -1,0 +1,24 @@
+trigger: none # Set to none, so we can manually trigger 
+variables:
+  - group: "Automation" # Used to get secrets keyvault 
+
+      - job: TestJob # No spaces allowed in name
+        dependsOn:
+          - SetAgentPool # run dependency jobs first 
+        condition: succeeded() # dependency jobs must succeed
+        variables:
+        - name: AgentPoolvar
+          value: $[ dependencies.SetAgentPool.outputs['SetAgentPool.regionagentpool'] ]
+        displayName: TestJob Displayname
+        pool:
+          name: $(AgentPoolvar)
+        workspace:
+          clean: all
+        steps:
+          - task: PowerShell@2
+            name: TestTask # No spaces allowed in name 
+            displayName: Task Display name # Readable name for task
+            env:
+              Secretnametouseinscript: $(kvsecretname) # Declare secrets from keyvault for use in job
+            inputs:
+              filePath: Utility/testps.ps1  # Path to powershell script in Infrastructure Repo
