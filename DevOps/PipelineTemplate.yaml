@@ -22,3 +22,61 @@ variables:
               Secretnametouseinscript: $(kvsecretname) # Declare secrets from keyvault for use in job
             inputs:
               filePath: Utility/testps.ps1  # Path to powershell script in Infrastructure Repo
+
+### Notification and workitem update jobs ###
+
+    # Used to notify on failure of pipeline 
+      - job: FailureNotification
+        dependsOn: TestJob # Change this to the name of the last job in the pipeline
+        condition: failed()
+        displayName: "Failure Notification"
+        pool:
+          name: $(agentpool)
+        
+        steps:
+        - task: PowerShell@2
+          name: FailureNotification
+          displayName: 'Failure Notification'
+          env:
+            f5backupaccount: $(f5backupaccount)
+            
+          inputs:
+            filePath: 'Utility/failurenotification.util.ps1'
+
+    # Used to update workitem on failure of pipeline 
+      - job: UpdateWorkItem_Failure
+        dependsOn: TestJob # Change this to the name of the last job in the pipeline
+        condition: failed()
+        displayName: "UpdateWorkItem_Failure"
+        pool:
+          name: $(agentpool)
+        
+        steps:
+        - task: PowerShell@2
+          name: UpdateWorkItem_Failure
+          displayName: 'UpdateWorkItem_Failure'
+          env:
+            workitemstatus: $(workitemstatusfailed)
+            
+          inputs:
+            filePath: 'Utility/Update-WorkItem.util.ps1'
+
+
+
+    # Used to update workitem on Success of pipeline 
+      - job: UpdateWorkItem_Success
+        dependsOn: TestJob # Change this to the name of the last job in the pipeline
+        condition: succeeded()
+        displayName: "Update workitem - Success"
+        pool:
+          name: $(agentpool)
+        
+        steps:
+        - task: PowerShell@2
+          name: UpdateWorkItem_Success
+          displayName: 'UpdateWorkItem_Success'
+          env:
+            workitemstatus: $(workitemstatussuccess)
+            
+          inputs:
+            filePath: 'Utility/Update-WorkItem.util.ps1'
