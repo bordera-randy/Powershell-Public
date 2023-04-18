@@ -26,11 +26,11 @@ DOCUMENT DOCUMENT DOCUMENT!!!!
 
 
 ## Sample Wiki 
-Overview
-Pipeline Status
-Trigger
-Resources
-Required Parameters
+Overview  
+Pipeline Status  
+Trigger  
+Resources  
+Required Parameters  
 
 | Parameter | Value | Use |
 |--|--|--|
@@ -39,7 +39,7 @@ Required Parameters
 | Agentpool | Azure Pipelines | Default azure hosted agent  |
 
 
-Troubleshooting
+Troubleshooting  
 
 | Error | Symptoms | Cause| Resolution | Workaround |
 |--|--|--|--|--|
